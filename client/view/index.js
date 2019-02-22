@@ -28,13 +28,13 @@ class Index extends React.Component {
             >
               <Menu.Item key="1">
                 <Icon type="pie-chart" />
-                <span>💐 鲜花行情</span>
+                <span>实时行情</span>
               </Menu.Item>
-              <SubMenu key="sub1" title={<span><Icon type="mail" /><span>内部查询</span></span>}>
-                <Menu.Item key="5">用户管理</Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
+              <SubMenu key="sub1" title={<span><Icon type="mail" /><span>鲜花管理</span></span>}>
+                <Menu.Item key="5">订单管理</Menu.Item>
+                <Menu.Item key="6">花艺师管理</Menu.Item>
+                <Menu.Item key="7">用户管设置</Menu.Item>
+                <Menu.Item key="8">退出系统</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
