@@ -2,46 +2,41 @@ import React from 'react'
 import { Layout, Menu, Icon, Button } from 'antd'
 const SubMenu = Menu.SubMenu;
 const { Sider, Header, Content, Footer } = Layout
-
+import Sidebar from '../components/sidebar';
+import RealtimeTrade from '../view/RealtimeTrade'
+import { Route, Switch } from 'react-router-dom'
 class Index extends React.Component {
   state = {
-    collapsed: false
+    collapsed: false,
+    style: {
+      layout: {
+        minHeight: '100vh'
+      },
+      header: {
+        color: 'white'
+      }
+    }
   }
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    })
-  }
+
 
   render() {
     // 设置Sider的minHeight可以使左右自适应对齐
     return (
       <div id='page'>
-        <Layout>
-          <Sider collapsible trigger={null} collapsed={this.state.collapsed}>
-            <Menu
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              mode="inline"
-              inlineCollapsed={this.state.collapsed}
-              theme='dark'
-            >
-              <Menu.Item key="1">
-                <Icon type="pie-chart" />
-                <span>实时行情</span>
-              </Menu.Item>
-              <SubMenu key="sub1" title={<span><Icon type="mail" /><span>鲜花管理</span></span>}>
-                <Menu.Item key="5">订单管理</Menu.Item>
-                <Menu.Item key="6">花艺师管理</Menu.Item>
-                <Menu.Item key="7">用户管设置</Menu.Item>
-                <Menu.Item key="8">退出系统</Menu.Item>
-              </SubMenu>
-            </Menu>
+        <Layout style={this.state.style.layout}>
+          <Header className='header'>
+            {/* <img src='/public/img/logo.jpeg'></img> */}
+            ON 蜗牛花艺交易系统
+          </Header>
+          <Sider>
+            <Sidebar ></Sidebar>
           </Sider>
           <Layout>
-            <Content>
 
+            <Content className='content'>
+              <RealtimeTrade></RealtimeTrade>
             </Content>
+            <Footer className='footer'>🐌 Powered by ON Studio Copy-right 2017 -2019</Footer>
           </Layout>
         </Layout>
       </div>

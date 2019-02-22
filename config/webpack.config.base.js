@@ -50,7 +50,7 @@ module.exports = function () {
             loader: 'url-loader',
             options: {
               limit: 1,
-              name: 'assets/images/[name].[hash:8].[ext]',
+              name: 'assets/img/[name].[ext]',
             },
           }],
         },
@@ -64,6 +64,10 @@ module.exports = function () {
             },
           }],
         },
+        {
+          test: /\.less$/,
+          use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        }
       ],
     },
     plugins: [

@@ -33,7 +33,7 @@ module.exports = function () {
         // 匹配替换
         ctx.url = url.replace(prefix, '')
         proxyTarget = target
-        ctx._proxyTarget = proxyTarget
+        ctx._proxyTarget = proxyTarget.target // 新修改处
         break
       }
     }

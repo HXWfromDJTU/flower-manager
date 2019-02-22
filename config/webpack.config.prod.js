@@ -44,12 +44,12 @@ const config = merge(base, {
       }
     ),
   ],
-//   production模式下，将侧重于模块体积优化和线上部署，包含如下内容：
-// 开启所有的优化代码
-// 更小的bundle大小
-// 去除掉只在开发阶段运行的代码
-// Scope hoisting和Tree-shaking
-// 自动启用uglifyjs对代码进行压缩
+  //   production模式下，将侧重于模块体积优化和线上部署，包含如下内容：
+  // 开启所有的优化代码
+  // 更小的bundle大小
+  // 去除掉只在开发阶段运行的代码
+  // Scope hoisting和Tree-shaking
+  // 自动启用uglifyjs对代码进行压缩
   optimization: {
     minimize: true, //取代 new UglifyJsPlugin(/* ... */)
     providedExports: true,
@@ -63,7 +63,7 @@ const config = merge(base, {
     noEmitOnErrors: true
   },
   optimization: {
-    minimize: env === 'production' ? true : false, //是否进行代码压缩
+    minimize: process.env.NODE_ENV === 'production' ? true : false, //是否进行代码压缩
     splitChunks: {
       chunks: "async",
       minSize: 30000, //模块大于30k会被抽离到公共模块
@@ -74,7 +74,7 @@ const config = merge(base, {
       cacheGroups: {
         default: {
           minChunks: 2,
-          priority: -20
+          priority: -20,
           reuseExistingChunk: true,
         },
         vendors: {

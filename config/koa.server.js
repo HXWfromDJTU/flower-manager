@@ -20,11 +20,12 @@ const opn = require('opn')
 const config = merge(require('./webpack.config.dev'))
 const appConfig = require('./../app.config')
 const currentIP = require('ip').address()
-const uri = `http://${currentIP}:${appConfig.appPort}`
+const uri = `http://localhost:${appConfig.appPort}`
+
 const clientCompiler = webpack(config)
 const devMiddleware = webpackDevMiddleware(clientCompiler, {
   publicPath: config.output.publicPath,
-  headers: {'Access-Control-Allow-Origin': '*'},
+  headers: { 'Access-Control-Allow-Origin': '*' },
   stats: {
     colors: true,
     modules: false,
@@ -62,7 +63,7 @@ middleWares.forEach((middleware) => {
 console.log('> Starting dev server...')
 
 devMiddleware.waitUntilValid(() => {
-  console.log('> Listening at ' + uri + '\n')
+  console.log('>Client listening at ' + uri + '\n')
   // opn(uri)
 })
 

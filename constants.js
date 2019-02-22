@@ -1,8 +1,12 @@
 /**
- *
+ * 开发代理设置
  */
 module.exports = {
   proxy: {
-    '/api': 'http://restapi.amap.com',
-  },
+    "/api": {
+      target: 'http://localhost:9527',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true
+    }
+  }
 }
