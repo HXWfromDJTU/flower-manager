@@ -1,5 +1,5 @@
 /**
- * Created by zdliuccit on 2018/11/1.
+ * Created by SWAIN-WONG on 2018/11/1.
  * 错误处理中间件，放在所以中间价之前，就可以捕获它们所有的同步或者异步代码中抛出的异常
  * @param {ctx} ctx koa ctx
  * @param {Function} next koa next */

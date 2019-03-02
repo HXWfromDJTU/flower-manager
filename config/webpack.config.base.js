@@ -1,6 +1,6 @@
 /**
  * webpack base配置
- * Created by zdliuccit on 2018/11/1.
+ * Created by SWAIN-WONG on 2018/11/1.
  */
 const path = require('path')
 const webpack = require('webpack')

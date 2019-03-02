@@ -1,6 +1,6 @@
 /**
  * koa2 server 入口
- * Created by zdliuccit on 2018/11/1.
+ * Created by SWAIN-WONG on 2018/11/1.
  */
 const Koa = require('koa')
 const convert = require('koa-convert')

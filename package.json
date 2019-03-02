@@ -10,7 +10,7 @@
     "server": "node server/index.js",
     "start": "npm run dev & npm run server"
   },
-  "author": "zdliuccit",
+  "author": "SWAIN-WONG",
   "license": "ISC",
   "keywords": [
     "react",

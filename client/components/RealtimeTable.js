@@ -18,48 +18,42 @@ class RealtimeTable extends React.Component {
                 'trend': '走势'
             }
         }
-        this.state.tableData.data = this.props.marketData;
+        this.state.tableData = this.props.marketData;
     }
     render() {
         return (
-            this.state.tableData.map((type, index) => {
-                console.log(type.title)
-                return (
-                    <Table
-                        className='realtimeTable'
-                        title={_ => type.title}
-                        dataSource={type.data}
-                        key={index}
-                        bordered={true}
-                        rowKey={index + Math.random().toFixed(4)}
-                    >
-                        {
-                            Object.keys(this.state.mapper).map((item, index) => {
-                                return (
-                                    <Column
-                                        title={this.state.mapper[item]}
-                                        dataIndex={item}
-                                        key={Math.random().toFixed(4)}
-                                    />
-                                )
-                            })
-                        }
-                        < Column
-                            title='操作'
-                            key='action'
-                            render={(text, record) => (
-                                <span>
-                                    <Button type="primary">采购</Button>
-                                    {/* <Divider type="vertical" />
+            <Table
+                className='realtimeTable'
+                title={_ => this.state.tableData.title}
+                dataSource={this.state.tableData.data}
+                key={Math.random().toFixed(2)}
+                bordered={true}
+                rowKey={Math.random().toFixed(4)}
+            >
+                {
+                    Object.keys(this.state.mapper).map((item, index) => {
+                        return (
+                            <Column
+                                title={this.state.mapper[item]}
+                                dataIndex={item}
+                                key={Math.random().toFixed(4)}
+                            />
+                        )
+                    })
+                }
+                < Column
+                    title='操作'
+                    key='action'
+                    render={(text, record) => (
+                        <span>
+                            <Button type="primary">采购</Button>
+                            {/* <Divider type="vertical" />
                                     <Button type="primary">Primary</Button> */}
-                                </span>
-                            )}
-                        />
-                        }
+                        </span>
+                    )}
+                />
+                }
                     </Table>
-                )
-            })
-
         )
     }
     componentWillReceiveProps(nextProps) {

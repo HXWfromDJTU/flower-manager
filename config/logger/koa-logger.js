@@ -1,5 +1,5 @@
 /**
- * Created by zdliuccit on 2017/9/22.
+ * Created by SWAIN-WONG on 2017/9/22.
  * log模块，依赖winston
  */
 

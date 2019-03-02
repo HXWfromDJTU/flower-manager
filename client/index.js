@@ -1,5 +1,5 @@
 /**
- * Created by zdliuccit on 18/11/1.
+ * Created by SWAIN-WONG on 18/11/1.
  */
 import '@babel/polyfill'
 import React from 'react'

@@ -4,26 +4,20 @@ const SubMenu = Menu.SubMenu;
 const { Sider, Header, Content, Footer } = Layout
 import Sidebar from '../components/sidebar';
 import RealtimeTrade from '../view/RealtimeTrade'
+import FloristManage from '../view/floristManage'
+import OrderManage from '../view/orderManage'
+import UserSetting from '../view/userSetting'
 import { Route, Switch } from 'react-router-dom'
 class Index extends React.Component {
   state = {
     collapsed: false,
-    style: {
-      layout: {
-        minHeight: '100vh'
-      },
-      header: {
-        color: 'white'
-      }
-    }
   }
-
 
   render() {
     // 设置Sider的minHeight可以使左右自适应对齐
     return (
       <div id='page'>
-        <Layout style={this.state.style.layout}>
+        <Layout className='total-layout'>
           <Header className='header'>
             {/* <img src='/public/img/logo.jpeg'></img> */}
             ON 蜗牛花艺交易系统
@@ -32,9 +26,12 @@ class Index extends React.Component {
             <Sidebar ></Sidebar>
           </Sider>
           <Layout>
-
             <Content className='content'>
-              <RealtimeTrade></RealtimeTrade>
+              {/* <Route path='/index' component={RealtimeTrade} /> */}
+              <Route path='/orderManage' component={OrderManage} />
+              <Route path='/floristManage' component={FloristManage} />
+              <Route path='/userSetting' component={UserSetting} />
+              <Route path='/login' component={Index} />
             </Content>
             <Footer className='footer'>🐌 Powered by ON Studio Copy-right 2017 -2019</Footer>
           </Layout>
@@ -44,4 +41,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default Index     

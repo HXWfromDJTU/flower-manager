@@ -1,6 +1,6 @@
 /**
  * webpack dev配置
- * Created by zdliuccit on 2018/11/1.
+ * Created by SWAIN-WONG on 2018/11/1.
  */
 const webpack = require('webpack')
 const merge = require('webpack-merge')
